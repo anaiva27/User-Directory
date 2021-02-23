@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Data from "./Data";
+import Search from "./Search";
 import API from "../utils/API";
 
 export default class Table extends Component {
@@ -18,9 +19,7 @@ export default class Table extends Component {
 
   //filter the table data so that it matches search string
   handleSearchChange = () => {
-    //replenish the search
-    //get the state of emplyees
-    //get the input string
+    //replenish the search. get the state of employees and the input string
     const searchInput = document.querySelector(".search").value.toLowerCase();
 
     //filter the array
@@ -66,8 +65,8 @@ export default class Table extends Component {
   render() {
     return (
       <div>
-        <input className="search" onChange={this.handleSearchChange} placeholder="Search..."></input>
-        <table >
+       <Search handleSearchChange={this.handleSearchChange}/>
+        <table class="table mt-2">
           <thead>
             <tr>
               <th>Image</th>

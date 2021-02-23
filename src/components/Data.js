@@ -1,6 +1,7 @@
 export default function Data(props) {
   return (
     <>
+      {/* filling up the table rows with user info */}
       {props.employees.map((result) => (
         <tr key={result.login.uuid}>
           <td>
